@@ -1,1 +1,35 @@
+name: Henry Obedekah
+on:
+  pull_request :
+    branches:
+      - main
 
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1  Check
+        uses: actions/checkout@v3
+
+      - name:  Step 2 Node.js installation
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Step 3 Install dependencies
+        run: npm i
+
+      - name: Step 4 Formatting Prettier
+        run: npm run prettier
+
+      - name: Step 5 Formatting Eslint
+        run: npm run lint
+
+      - name:  Step 6 Test and coverage with Jest
+        run: npm run test && npm run test:coverage
+
+      - name: Step 7 Build
+        run: npm run build
+
+      - name: Success message
+        run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
