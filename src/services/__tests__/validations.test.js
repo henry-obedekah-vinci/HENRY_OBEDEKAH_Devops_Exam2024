@@ -13,4 +13,9 @@ describe('validations tests suites - isValid', () => {
         expect(isValid(result)).toBe(false);
     });
 
+   //test 2
+   test('should return true if gamerTag contains special characters', () => {
+    expect(isValid('gamerTag$')).toBe(true);
+});
+
 });
