@@ -3,7 +3,7 @@ const isValid = (gamertag) => {
     const specialCharacters = ['$', '#', '@', '!', '%', '&', '*'];
 
     for (let i = 0; i < specialCharacters.length; i++) {
-            if(gamertag.include(specialCharacters[i]) && gamertag.length < 8){
+            if(gamertag.include(specialCharacters[i]) && gamertag.length < 8 && gamertag.match([0-9]) ){
                 return true;
             }
         }

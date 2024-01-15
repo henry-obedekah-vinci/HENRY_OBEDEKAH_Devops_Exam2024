@@ -16,6 +16,11 @@ describe('validations tests suites - isValid', () => {
    //test 2
    test('should return true if gamerTag contains special characters', () => {
     expect(isValid('gamerTag$')).toBe(true);
-});
+    });
+
+    //test 3
+    test('Invalid - gamertag must contain at least a number', () => {
+        expect(isValid('gamerTag$')).toBe(false);
+    });
 
 });
