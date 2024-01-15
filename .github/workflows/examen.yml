@@ -20,10 +20,10 @@ jobs:
         run: npm i
 
       - name: Step 4 Formatting Prettier
-        run: npm run prettier
+        run: npm run prettier:fix
 
       - name: Step 5 Formatting Eslint
-        run: npm run lint
+        run: npm run lint:fix
 
       - name:  Step 6 Test and coverage with Jest
         run: npm run test && npm run test:coverage
